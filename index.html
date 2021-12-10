@@ -8,24 +8,41 @@
 </head>
 <body>
     <script>
-        //create array for rps choices
-        const choiceArray = ['Rock', 'Paper', 'Scissors'];
-
+        //write a function to compare player vs comp and return winner
+        function playRound(player = playerSelection, computer = computerSelection) {
+            if (player === null || player === undefined) {
+                return 'Cancelled';
+            } else if ((player.toLowerCase() === 'rock' && computer === 'rock') || 
+            (player.toLowerCase() === 'paper' && computer=== 'paper') || 
+            (player.toLowerCase() === 'scissors' && computer === 'scissors')) {
+                return 'It\'s a Tie!';
+            } else if ((player.toLowerCase() === 'rock' && computer === 'paper') ||
+             (player.toLowerCase() === 'paper' && computer === 'scissors') ||
+             (player.toLowerCase() === 'scissors' && computer === 'rock')) {
+                 return 'You Lose!';
+             } else {
+                 return 'You Win!'
+             };
+            
+        }
+        
         //make a function for computerPlay
+        const choiceArray = ['rock', 'paper', 'scissors'];
         function computerPlay() {
             let computerChoice = choiceArray[Math.floor(Math.random()*choiceArray.length)]
             return computerChoice;
         } 
-        console.log(computerPlay())
+        
+        const computerSelection = computerPlay();
         
         //make a prompt for playerSelection 
-        let playerSelection = prompt('Are you ready to play?! Enter Rock, Paper, or Scissors:');
-        console.log(playerSelection);
+        const playerSelection = prompt('Are you ready to play?! Enter Rock, Paper, or Scissors:');
+        //console.log(playerSelection);
 
-	        //Write a function to verify player input equals rock, paper, or scissors
-
+        console.log(playRound());
+            
         //write a function for game with 5 rounds
-	        //write a function to compare player vs comp and return winner
+            //need variable to keep score for player and computer
 	        //write a function to print winner with message
     </script>
 </body>
