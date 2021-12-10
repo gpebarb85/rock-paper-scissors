@@ -8,6 +8,17 @@
 </head>
 <body>
     <script>
+        //make a function for computerPlay
+        const choiceArray = ['rock', 'paper', 'scissors'];
+        function computerPlay() {
+            let computerChoice = choiceArray[Math.floor(Math.random()*choiceArray.length)]
+            return computerChoice;
+        } 
+        
+        const computerSelection = computerPlay();
+        
+        //make a prompt for playerSelection 
+        const playerSelection = prompt('Are you ready to play?! Enter Rock, Paper, or Scissors:');
         //write a function to compare player vs comp and return winner
         function playRound(player = playerSelection, computer = computerSelection) {
             if (player === null || player === undefined) {
@@ -30,19 +41,7 @@
             
         }
         
-        //make a function for computerPlay
-        const choiceArray = ['rock', 'paper', 'scissors'];
-        function computerPlay() {
-            let computerChoice = choiceArray[Math.floor(Math.random()*choiceArray.length)]
-            return computerChoice;
-        } 
-        
-        const computerSelection = computerPlay();
-        
-        //make a prompt for playerSelection 
-        const playerSelection = prompt('Are you ready to play?! Enter Rock, Paper, or Scissors:');
-        
-        //console.log(playRound());
+        console.log(playRound());
             
         //write a function for game with 5 rounds
         let playerScore = 0;
