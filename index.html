@@ -20,8 +20,12 @@
              (player.toLowerCase() === 'paper' && computer === 'scissors') ||
              (player.toLowerCase() === 'scissors' && computer === 'rock')) {
                  return 'You Lose!';
-             } else {
+             } else if ((player.toLowerCase() === 'rock' && computer === 'scissors') ||
+             (player.toLowerCase() === 'paper' && computer === 'rock') ||
+             (player.toLowerCase() === 'scissors' && computer === 'paper')) {
                  return 'You Win!'
+             } else {
+                 return 'You must choose Rock, Paper, Scissors!'
              };
             
         }
