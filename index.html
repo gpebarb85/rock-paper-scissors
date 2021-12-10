@@ -15,12 +15,12 @@
             return computerChoice;
         } 
         
-        const computerSelection = computerPlay();
+        let computerSelection = computerPlay();
         
         //make a prompt for playerSelection 
-        const playerSelection = prompt('Are you ready to play?! Enter Rock, Paper, or Scissors:');
+        let playerSelection = prompt('Are you ready to play?! Enter Rock, Paper, or Scissors:');
         //write a function to compare player vs comp and return winner
-        function playRound(player = playerSelection, computer = computerSelection) {
+        function playRound(player, computer) {
             if (player === null || player === undefined) {
                 return 'Cancelled';
             } else if ((player.toLowerCase() === 'rock' && computer === 'rock') || 
@@ -41,18 +41,29 @@
             
         }
         
-        console.log(playRound());
+        //console.log(playRound());
             
         //write a function for game with 5 rounds
         let playerScore = 0;
         let computerScore = 0;
         let winner;
         let roundLimit = 5;
-
-        function game() {
-            
+        
+        function game() /* need to figure out how to clear and reset player/comp choices*/{
+            for (let rounds = 5; rounds > 0 ; rounds--) {
+                let game = playRound(playerSelection, computerSelection);
+                if (game === 'You Win!') {
+                    playerScore += 1;
+                    alert(game);
+                } else if (game === 'You Lose!') {
+                    computerScore += 1;
+                    alert(game);
+                } else if (game === 'It\'s a Tie!') {
+                    alert(game);
+                }; 
+            };
         }
-
+        console.log(game());
         //write a function to keep track of rounds
         function roundCounter(round) {
             while (round <= 5) {
@@ -63,7 +74,7 @@
                 };
             };
         }   
-        console.log(roundCounter(roundLimit));
+        //console.log(roundCounter(roundLimit));
     </script>
 </body>
 </html>
