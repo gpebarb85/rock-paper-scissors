@@ -46,10 +46,24 @@
         //write a function for game with 5 rounds
         let playerScore = 0;
         let computerScore = 0;
-        function game() {
+        let winner;
+        let roundLimit = 5;
 
-        }
+        function game() {
             
+        }
+
+        //write a function to keep track of rounds
+        function roundCounter(round) {
+            while (round <= 5) {
+                if (round !== 0) {
+                    round -= 1;
+                } else {
+                    return 'Winner is: ' + winner;
+                };
+            };
+        }   
+        console.log(roundCounter(roundLimit));
     </script>
 </body>
 </html>
