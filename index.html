@@ -8,6 +8,15 @@
 </head>
 <body>
     <script>
+        //create array for rps choices
+        const choiceArray = ['Rock', 'Paper', 'Scissors'];
+
+        //make a function for computerPlay
+        function computerPlay() {
+            let computerChoice = choiceArray[Math.floor(Math.random()*choiceArray.length)]
+            return computerChoice;
+        } 
+        console.log(computerPlay())
         
         //make a prompt for playerSelection 
         let playerSelection = prompt('Are you ready to play?! Enter Rock, Paper, or Scissors:');
