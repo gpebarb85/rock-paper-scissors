@@ -22,7 +22,7 @@ function playRound(player, computer) {
      (player.toLowerCase() === 'scissors' && computer === 'paper')) {
          return 'You Win!'
      } else {
-         return 'You must choose Rock, Paper, Scissors!'
+         return 'You must choose Rock, Paper, or Scissors!'
      };
     
 }
