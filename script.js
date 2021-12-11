@@ -8,7 +8,7 @@ function computerPlay() {
 //write a function to compare player vs comp and return winner
 function playRound(player, computer) {
     if (player === null || player === undefined) {
-        return 'Cancelled';
+        return 'Forfeit! Computer Wins!';
     } else if ((player.toLowerCase() === 'rock' && computer === 'rock') || 
     (player.toLowerCase() === 'paper' && computer=== 'paper') || 
     (player.toLowerCase() === 'scissors' && computer === 'scissors')) {
@@ -40,11 +40,9 @@ function game() {
         if (game === 'You Win!') {
             playerScore += 1;
             alert(game);
-        } else if (game === 'You Lose!') {
+        } else if (game === 'You Lose!' || game === 'Forfeit! Computer Wins!') {
             computerScore += 1;
             alert(game);
-        } else if (game === 'Cancelled') {
-            computerScore += 1;
         } else {
             ++rounds;
             alert(game);
