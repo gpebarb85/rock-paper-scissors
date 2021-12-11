@@ -43,7 +43,9 @@ function game() {
         } else if (game === 'You Lose!') {
             computerScore += 1;
             alert(game);
-        } else if (game === 'It\'s a Tie!') {
+        } else if (game === 'Cancelled') {
+            computerScore += 1;
+        } else {
             ++rounds;
             alert(game);
         };
