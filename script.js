@@ -61,5 +61,5 @@ let winner = (player, computer) => {
     } else {
         return 'After 5 rounds, the result is a stalemate! Keep your wits about you and try again!';
     };
-};
+}
 alert(winner(playerScore, computerScore));
